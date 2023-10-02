@@ -1,0 +1,41 @@
+.ingredient_page {
+  background: #230312;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 5rem;
+  min-height: 92.8vh;
+
+  h1 {
+    text-align: center;
+  }
+
+  .ingredient_cocktails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .one_drink {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      margin: 1rem;
+      background-color: rgba(238, 116, 116, 0.4);
+      border-radius: 20px;
+      text-decoration: none;
+
+      &_img {
+        background: linear-gradient(90deg, #fff8f79a, #f0f7dfa2);
+        border-radius: 100%;
+        margin-inline: auto;
+      }
+
+      span {
+        margin-top: 1rem;
+        font-weight: 600;
+        font-size: 25px;
+      }
+    }
+  }
+}

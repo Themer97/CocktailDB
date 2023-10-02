@@ -1,0 +1,22 @@
+.search_container {
+  border-bottom: 2px solid white;
+  padding: 1rem;
+  color: white;
+
+  .searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .stats {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+}

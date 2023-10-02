@@ -1,0 +1,47 @@
+@import '../../../node_modules/bootstrap/scss/functions';
+
+$primary: #900;
+$enable-shadows: true;
+$prefix: 'mo-';
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+@import '../../../node_modules/bootstrap/scss/maps';
+@import '../../../node_modules/bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/root';
+
+.container-fluid {
+  .nav_search {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end !important;
+  }
+}
+
+.dark {
+  background-color: black !important;
+
+  .ant-switch {
+    border: 1px solid white !important;
+    padding: 11px !important;
+
+    .ant-switch-handle::before {
+      background-color: white;
+    }
+  }
+}
+
+.light {
+  background-color: white !important;
+
+  .ant-switch {
+    border: 1px solid black !important;
+    padding: 11px !important;
+
+    .ant-switch-handle::before {
+      background-color: black;
+    }
+  }
+}

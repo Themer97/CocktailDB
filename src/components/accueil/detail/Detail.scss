@@ -1,0 +1,119 @@
+.details_container {
+  background: #230312;
+  height: 92.8vh;
+  display: flex;
+  padding: 0 5rem;
+  align-items: center;
+  justify-content: space-around;
+
+  .card-container {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  .card-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(200px);
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .card .img-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transition: scale 0.6s, rotate 0.6s, filter 1s;
+
+    .cocktail_img {
+      border-radius: 10px;
+    }
+  }
+
+  .card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    // color: #e8e8e8;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(50px);
+    // transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .card .content .heading,
+  h2 {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .card:hover .content {
+    opacity: 1;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .card:hover .img-content {
+    scale: 2.5;
+    rotate: 30deg;
+    filter: blur(30px);
+  }
+
+  .ingredients {
+    // color: white;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 5rem;
+    }
+
+    .ingredient {
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      &_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // color: blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.dark_theme {
+  color: white !important;
+}
+
+.light_theme {
+  color: black !important;
+}
