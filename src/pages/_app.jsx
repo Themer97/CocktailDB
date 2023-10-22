@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import "../app/globals.css";
 
 function App({ Component, pageProps: { pageProps } }) {
+  //set theme
   const [themeMode, setThemeMode] = useState("light");
 
   const handleThemeChange = (newMode) => {
