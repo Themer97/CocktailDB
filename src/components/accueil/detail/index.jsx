@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Image from 'next/image';
-import { getCocktailDetail } from '@/redux/details/detailsAsyncThunk';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Image from "next/image";
+import { getCocktailDetail } from "@/redux/details/detailsAsyncThunk";
 
-import './Detail.scss';
+import "./Detail.scss";
 
 const Details = ({ id, themeMode }) => {
   const dispatch = useDispatch();
@@ -22,30 +22,30 @@ const Details = ({ id, themeMode }) => {
   return (
     <div
       className={`details_container ${themeMode} ${
-        themeMode === 'light' ? 'light_theme' : 'dark_theme'
+        themeMode === "light" ? "light_theme" : "dark_theme"
       }`}
     >
-      <div className='card-container'>
-        <div className='card'>
-          <div className='img-content'>
+      <div className="card-container">
+        <div className="card">
+          <div className="img-content">
             <Image
-              className='cocktail_img'
+              className="cocktail_img"
               src={cocktailDetail.strDrinkThumb}
-              width={780}
-              height={780}
-              alt='cocktail-image'
+              layout="fill"
+              objectFit="cover"
+              alt="cocktail-image"
             />
           </div>
-          <div className='content'>
-            <p className='heading'>{cocktailDetail.strDrink}</p>
+          <div className="content">
+            <p className="heading">{cocktailDetail.strDrink}</p>
             <p>{cocktailDetail.strInstructions}</p>
           </div>
         </div>
       </div>
-      <div>
-        <div className='ingredients'>
+      <div className="ingredients_container">
+        <div className="ingredients">
           <h2>Ingredients</h2>
-          <div className='ingredient'>
+          <div className="ingredient">
             {Array.from({ length: 15 }, (_, index) => {
               const ingredientKey = `strIngredient${index + 1}`;
               const measurementKey = `strMeasure${index + 1}`;
@@ -57,16 +57,17 @@ const Details = ({ id, themeMode }) => {
                 return (
                   <Link
                     href={`/ingredient/${encodeURIComponent(ingredient)}`}
-                    className='ingredient_item'
+                    className="ingredient_item"
                     key={ingredientKey}
                   >
                     <Image
                       src={`https://www.thecocktaildb.com/images/ingredients/${ingredient}-Medium.png`}
                       width={200}
                       height={200}
-                      alt='ingredient'
+                      alt="ingredient"
+                      className="ingredient_img"
                     />
-                    {measurement ? `${measurement} - ` : ''}
+                    {measurement ? `${measurement} - ` : ""}
                     {ingredient}
                   </Link>
                 );

@@ -1,11 +1,12 @@
 .cocktail_container {
-  // border-bottom: 2px solid white;
   margin: 0 10rem;
-  // padding: 1rem;
-  // color: white;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 3rem;
+  }
 
   .drinks {
     padding: 1rem;
@@ -13,12 +14,17 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    text-align: center;
 
     .myCard {
       background-color: transparent;
       width: 300px;
       height: 320px;
       margin: 1rem 2rem;
+
+      @media screen and (max-width: 768px) {
+        margin: 1rem 0;
+      }
     }
 
     .title {
@@ -93,7 +99,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      content: '';
+      content: "";
       width: 110%;
       height: 110%;
       position: absolute;
@@ -136,6 +142,13 @@
 
     .ant-pagination-options {
       display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      margin: 1rem 0.5rem;
     }
   }
 }
